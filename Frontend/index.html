@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DocMind - AI Study Tool</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+
+    <div class="header">
+      <h1>📄 DocMind</h1>
+      <p class="subtitle">Upload your notes — AI generates flashcards instantly</p>
+    </div>
+
+    <div class="upload-box" id="uploadBox" onclick="document.getElementById('fileInput').click()">
+      <div class="upload-icon">☁️</div>
+      <h3>Drop your PDF here</h3>
+      <p>or click to browse files</p>
+    </div>
+
+    <input type="file" id="fileInput" accept=".pdf" onchange="handleFile(this)">
+    <p class="file-name" id="fileName">No file selected</p> 
+
+    <button class="btn" id="analyseBtn" disabled onclick="handleAnalyse()">
+      ✨ Analyse with AI
+    </button>
+
+    <div class="tabs" id="tabs" style="display:none">
+      <button class="tab-btn active" onclick="showTab('flashcards', this)">🃏 Flashcards</button>
+      <button class="tab-btn" onclick="showTab('questions', this)">💬 Ask Questions</button>
+      <button class="tab-btn" onclick="showTab('summary', this)">📝 Summary</button>
+    </div>
+
+    <div class="result-section" id="flashcards" style="display:none">
+      <div class="loading" id="flashcardLoading">🤖 Generating flashcards...</div>
+      <div id="flashcardList"></div>
+    </div>
+
+    <div class="result-section" id="questions" style="display:none">
+      <div class="qa-box">
+        <input type="text" id="questionInput" placeholder="Ask anything..." class="qa-input">
+        <button class="qa-btn" onclick="askQuestion()">Ask</button>
+      </div>
+      <div class="answer-box" id="answerBox" style="display:none"></div>
+    </div>
+
+    <div class="result-section" id="summary" style="display:none">
+      <div class="loading" id="summaryLoading">🤖 Generating summary...</div>
+      <div id="summaryText"></div>
+    </div>
+
+  </div> <script src="script.js"></script>
+
+</body>
+</html>
