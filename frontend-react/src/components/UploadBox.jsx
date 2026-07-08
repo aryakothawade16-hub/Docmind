@@ -23,7 +23,7 @@ async function handleAnalyse() {
     formData.append('pdf', file)
 
     try {
-      const response = await fetch('http://localhost:5000/upload', {
+      const response = await fetch('https://docmind-backend-w8qz.onrender.com/upload', {
         method: 'POST',
         body: formData
       })
