@@ -16,7 +16,7 @@ function ResultPanel({ flashcards }) {
     setAsking(true)
 
     try {
-      const response = await fetch('https://docmind-backend-w8qz.onrender.com/upload', {
+      const response = await fetch('https://docmind-backend-w8qz.onrender.com/ask', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ question })
@@ -37,7 +37,7 @@ function ResultPanel({ flashcards }) {
     setLoadingSummary(true)
 
     try {
-      const response = await fetch('https://docmind-backend-w8qz.onrender.com/upload', {
+      const response = await fetch('https://docmind-backend-w8qz.onrender.com/summary', {
         method: 'POST'
       })
 
