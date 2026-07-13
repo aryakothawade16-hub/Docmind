@@ -14,8 +14,8 @@ function UploadBox({ onAnalyseComplete }) {
       setFile(selectedFile)
     }
   }
-}
-async function handleAnalyse() {
+
+  async function handleAnalyse() {
     if (!file) return
     setLoading(true)
 
@@ -75,6 +75,6 @@ async function handleAnalyse() {
       </button>
     </div>
   )
-
+}
 
 export default UploadBox
